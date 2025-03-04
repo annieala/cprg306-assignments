@@ -89,7 +89,7 @@ const NewItem = () => {
             <button
                 onClick={handleSubmit}
                 className="mt-6 w-full max-w-md px-6 py-3 font-bold border-2 border-pink-500 bg-pink-500 text-black rounded-md hover:bg-pink-300 hover:border-pink-300 transition duration-200">
-                
+                +
             </button>
         </div>
 

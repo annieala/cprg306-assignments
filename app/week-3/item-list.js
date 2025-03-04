@@ -1,25 +1,28 @@
 "use client"; 
+import { useState } from "react";
 import Item from "./item";
+import itemsData from "items.json";
+
+
 
 export default function ItemList() {
-  const items = [
-    { name: "milk, 4 L 🥛", quantity: 1, category: "dairy" },
-    { name: "bread 🍞", quantity: 2, category: "bakery" },
-    { name: "eggs, dozen 🥚", quantity: 2, category: "dairy" },
-    { name: "bananas 🍌", quantity: 6, category: "produce" },
-    { name: "broccoli 🥦", quantity: 3, category: "produce" },
-    { name: "chicken breasts, 1 kg 🍗", quantity: 1, category: "meat" },
-    { name: "pasta sauce 🍝", quantity: 3, category: "canned goods" },
-    { name: "spaghetti, 454 g 🍝", quantity: 2, category: "dry goods" },
-    { name: "toilet paper, 12 pack 🧻", quantity: 1, category: "household" },
-    { name: "paper towels, 6 pack", quantity: 1, category: "household" },
-    { name: "dish soap 🍽️", quantity: 1, category: "household" },
-    { name: "hand soap 🧼", quantity: 4, category: "household" },
-  ];
+  const [sortBy, setSortBy] = useState("name");
+  const[itemList, setItemList] = useState(itemsData);
+  
+  // sort the items - localCompare for non ACSII characters
+  const sortedItems = [...itemList].sort((a, b) =>
+    a[sortBy].localeCompare(b[sortBy])
+  ); 
 
+    
+  
   return (
     <div>
-      <ul>
+
+      <button onClick={() => setSortBy("name")}>Sort by Name</button>
+      <button onClick={() => setSortBy("category")}>Sort by Category</button>
+      
+      <ul>"
         {items.map((item, index) => (
           <Item key={index} {...item} />
         ))}
