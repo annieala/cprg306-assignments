@@ -14,7 +14,7 @@ export default function Page() {
   };
 
   return (
-    <main className="flex flex-col items-start p-8 bg-black min-h-screen min-w-[50vw]">
+<div className="flex flex-col items-center justify-center min-h-screen gap-2 bg-black">
       <h1 className="text-4xl font-bold mb-6 text-gray-100">Shopping List</h1>
       <div>
         {/*  Pass handleAddItem to NewItem as a prop */}
@@ -22,6 +22,6 @@ export default function Page() {
       </div>
       {/*  Pass items state to ItemList */}
       <ItemList items={items} />
-    </main>
+    </div>
   );
 }

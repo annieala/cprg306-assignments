@@ -37,8 +37,8 @@ const NewItem = ({ onAddItem }) => {
     };
 
     return (
-<div className="bg-black text-pink-300 h-screen flex flex-col items-end justify-start p-6 space-y-4 absolute top-6 right-6">
-            {/* name field */}
+    <div className="bg-black text-pink-300 h-auto flex flex-col items-center justify-start p-2 space-y-4 rounded-lg shadow-md">
+    {/* name field */}
             <input
                 type="text"
                 placeholder="Item name"
