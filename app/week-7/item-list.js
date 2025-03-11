@@ -12,7 +12,7 @@ export default function ItemList({ items }) {
   ) : []; 
 
   return (
-    <div className="p-6 mt-16 w-full max-w-3xl mx-auto">
+<div className="p-6 mt-16 w-full max-w-3xl min-w-[50vw] mx-auto">
 
       {/* create sort buttons using template literals & ternary operator*/}
       <div className="flex space-x-4 mb-4">
