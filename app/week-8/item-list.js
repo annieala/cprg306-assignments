@@ -12,7 +12,7 @@ export default function ItemList({ items, onItemSelect }) {
   ) : []; 
 
   return (
-  <div className="p-3 mt-8 w-full   flex flex-col items-start">
+  <div className="p-3 mt-8 w-full max-w-3xl flex flex-col items-start">
 
       {/* create sort buttons using template literals & ternary operator*/}
       <div className="flex space-x-4 mb-4">
@@ -28,7 +28,7 @@ export default function ItemList({ items, onItemSelect }) {
         >
           Sort by Name
         </button>
-
+        
         <button
           onClick={() => setSortBy("category")}
           className={`px-4 py-2 rounded-md font-semibold transition ${

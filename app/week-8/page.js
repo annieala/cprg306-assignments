@@ -5,17 +5,6 @@ import ItemList from "./item-list";
 import MealIdeas from "./meal-ideas";
 import itemsData from "./items.json"; 
 
-// Function to clean item names by removing emojis and extra text
-// const cleanItemName = (name) => {
-//   return name
-//     .split(",")[0] // Remove quantity and emoji part
-//     .replace(/[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu, "") // Remove emojis
-//     .tolowerCase("") // Convert to lowercase
-
-//     .replace(/\s+/g, " ") // Remove extra spaces
-//     .trim();
-// };
-
 function cleanItemName(name) {
   return name.split(" ")[0].replace(",", "").toLowerCase();
 }

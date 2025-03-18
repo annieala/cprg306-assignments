@@ -26,14 +26,6 @@ const Ingredient = ({ ingredient }) => {
         }
     };
 
-    // const handleOnClick = async (mealName) => {
-    //     const fetchedMeals = await fetchMealIdeas(ingredient.mealName);
-    //     setMeals(fetchedMeals.meals);
-        
-        
-    // };
-    
-
     useEffect(() => {
     
         loadMealIdeas();
@@ -57,6 +49,98 @@ const Ingredient = ({ ingredient }) => {
             )}
             </div>
         </section>
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         
     );
