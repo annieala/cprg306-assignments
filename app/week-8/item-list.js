@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Item from "../week-8/item";
+import Item from "./item";
 
-export default function ItemList({ items }) {
+export default function ItemList({ items, onItemSelect }) {
   const [sortBy, setSortBy] = useState("name");
 
   // sort the items; localCompare for emojis
@@ -12,7 +12,7 @@ export default function ItemList({ items }) {
   ) : []; 
 
   return (
-  <div className="p-3 mt-8 w-full max-w-3xl min-w-[50vw] flex flex-col items-center">
+  <div className="p-3 mt-8 w-full   flex flex-col items-start">
 
       {/* create sort buttons using template literals & ternary operator*/}
       <div className="flex space-x-4 mb-4">
@@ -46,7 +46,7 @@ export default function ItemList({ items }) {
       {/* render the items */}
       <ul className="space-y-2">
         {sortedItems.map((item) => (
-          <Item key={item.id} {...item} />
+          <Item key={item.id} {...item} onSelect={() => onItemSelect(item)} />
         ))}
       </ul>
     </div>
