@@ -37,7 +37,7 @@ const Ingredient = ({ ingredient }) => {
         {/* <p className="font-thin text-gray-100">Buy {ingredient.quantity} in {ingredient.category}</p> */}
 
         <div className="mt-4">
-            <h3 className = "text-md font-semibold"> Meal Ideas:</h3>
+            <h3 className = "text-md text-gray-100 font-semibold"> Meal Ideas:</h3>
             {meals.length > 0 ? (
                 <ul className="mt-2 list-disc list-inside">
                     {meals.map((meal) => (
