@@ -47,6 +47,11 @@ export default function Page() {
               Week 8 Assignment
             </Link>
           </li>
+          <li>
+            <Link href="/week-9" className="block text-white hover:text-green-400 transition duration-300">
+              Week 9 Assignment
+            </Link>
+          </li>
           
         </ul>
       </div>
