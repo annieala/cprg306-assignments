@@ -22,7 +22,7 @@ export default function ItemList({ items, onItemSelect }) {
           ` template literals for readability & flexibility ` */
           className={`px-4 py-2 rounded-md font-semibold transition ${
             sortBy === "name"
-              ? "bg-green-600 text-white"
+              ? "bg-pink-600 text-white"
               : "bg-gray-200 text-black hover:bg-gray-300"
           }`}
         >
@@ -35,7 +35,7 @@ export default function ItemList({ items, onItemSelect }) {
             sortBy === "category"
             /* ? : ternary operator for if else,
             if sortBy is "green" then button is green, else gray */
-              ? "bg-green-600 text-white"
+              ? "bg-pink-600 text-white"
               : "bg-gray-200 text-black hover:bg-gray-300"
           }`}
         >
