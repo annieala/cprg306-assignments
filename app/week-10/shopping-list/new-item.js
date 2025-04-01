@@ -7,7 +7,7 @@ const NewItem = ({ onAddItem }) => {
     const [name, setName] = useState("");
     const [category, setCategory] = useState("Produce");
     const [quantity, setQuantity] = useState(1); // useState(1) - set the quantity initially to 1
-    const [lastAddedItem, setLastAddedItem] = useState(null);
+    const [addedItems, setAddedItems] = useState([]);
 
     // increments function that increments the quantity state variable by 1 & does not exceed 20.
     const increment = () => {
@@ -27,14 +27,17 @@ const NewItem = ({ onAddItem }) => {
         event.preventDefault();
       
         const item = { name, category, quantity };
-        onAddItem(item);                // Send it to parent
-        setLastAddedItem(item);        // ✅ Store it for display
+        onAddItem(item);
       
-        // Clear the form
+        // ✅ Append new item to the list
+        setAddedItems((prev) => [...prev, item]);
+      
+        // Reset form fields
         setName("");
-        setCategory("Produce");        // ✅ Fix capitalization (was "produce")
+        setCategory("Produce");
         setQuantity(1);
       };
+      
       
 
     return (
@@ -97,12 +100,16 @@ const NewItem = ({ onAddItem }) => {
                 +
             </button>
             
-            {lastAddedItem && (
-            <div className="mt-4 text-pink-300 text-center">
-                <p className="font-semibold">Last Added Item:</p>
-                <p>Item: {lastAddedItem.name}</p>
-                <p>Category: {lastAddedItem.category}</p>
-                <p>Quantity: {lastAddedItem.quantity}</p>
+            {addedItems.length > 0 && (
+            <div className="mt-6 w-full max-w-md text-pink-300">
+                <h3 className="text-lg font-bold mb-2">Recently Added Items:</h3>
+                <ul className="space-y-1 list-disc list-inside">
+                {addedItems.map((item, index) => (
+                    <li key={index}>
+                    {item.name} — {item.category} — Qty: {item.quantity}
+                    </li>
+                ))}
+                </ul>
             </div>
             )}
 
